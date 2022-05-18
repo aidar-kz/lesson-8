@@ -1,14 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
     {
       path: '/register',
       name: 'register',
@@ -24,6 +18,27 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/TodoView.vue')
+    },
+    {
+      path: '/',
+      name: 'all-posts',
+      component: () => import('../views/posts/AllPosts.vue')
+    },
+    {
+      path: '/create-post',
+      name: 'create-post',
+      component: () => import('../views/posts/CreatePost.vue')
+    },
+    {
+      path: '/posts/:id',
+      name: 'view-post',
+      component: () => import('../views/posts/ViewPost.vue')
+    },
+    {
+      path: '/posts/edit',
+      name: 'edit-post',
+      component: () => import('../views/posts/EditPost.vue'),
+      props: true
     }
   ]
 })

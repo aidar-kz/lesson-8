@@ -1,58 +1,34 @@
 <template>
   <div class="col col-md-6 mx-auto">
-    <form @submit.prevent="addTodo" class="row g-3 mb-3">
-      <div class="col-10">
-        <input type="text" class="form-control" v-model="todoText" />
-      </div>
-      <div class="col-2">
-        <button type="submit" class="btn btn-primary">
-          <i class="bi bi-plus"></i>
-        </button>
-      </div>
-    </form>
+    <AddTodo @add-todo="addTodo" />
 
     <ul class="list-group">
-      <li
+      <TodoItem
         v-for="todo in todos"
-        class="list-group-item d-flex justify-content-between align-items-center"
         :key="todo.id"
-      >
-        <div>
-          <input
-            type="checkbox"
-            class="form-check-input"
-            :checked="todo.done"
-            @change="toggleDone(todo.id)"
-          />
-          <span :class="['ms-2', { done: todo.done }]">{{ todo.text }}</span>
-        </div>
-        <button class="btn btn-flat" @click="deleteTodo(todo.id)">
-          <i class="bi bi-x-circle"></i>
-        </button>
-      </li>
+        v-bind="todo"
+        @toggle-done="toggleDone"
+        @delete-todo="deleteTodo"
+      />
     </ul>
   </div>
 </template>
 
 <script>
+import TodoItem from "@/components/TodoItem.vue";
+import AddTodo from "@/components/AddTodo.vue";
+
 const URL = "http://localhost:5000/todos";
 
 export default {
+  components: { TodoItem, AddTodo },
   data() {
     return {
-      todoText: "",
       todos: [],
     };
   },
   methods: {
-    async addTodo() {
-      if (!this.todoText) return alert("Пожалуйста добавьте описание");
-
-      const newTodo = {
-        text: this.todoText,
-        done: false,
-      };
-
+    async addTodo(newTodo) {
       const res = await fetch(URL, {
         method: "POST",
         headers: {
@@ -64,7 +40,6 @@ export default {
       const data = await res.json();
 
       this.todos = [...this.todos, data];
-      this.todoText = "";
     },
     async fetchTodos() {
       const res = await fetch(URL);

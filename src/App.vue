@@ -13,4 +13,5 @@ import AppNavbar from "@/components/AppNavbar.vue";
 
 <style>
 @import "@/assets/base.css";
+@import "bootstrap/dist/css/bootstrap.css";
 </style>
