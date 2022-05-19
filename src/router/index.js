@@ -39,6 +39,17 @@ const router = createRouter({
       name: 'edit-post',
       component: () => import('../views/posts/EditPost.vue'),
       props: true
+    },
+
+    {
+      path: '/twitter',
+      name: 'all-tweets',
+      component: () => import('../views/twitter/AllTweets.vue'),
+    },
+    {
+      path: '/twitter/:id',
+      name: 'view-tweet',
+      component: () => import('../views/twitter/ViewTweet.vue'),
     }
   ]
 })

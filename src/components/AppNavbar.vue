@@ -27,6 +27,10 @@ import { RouterLink } from "vue-router";
           <li class="nav-item">
             <RouterLink class="nav-link" to="/todo">Список дел</RouterLink>
           </li>
+
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/twitter">Твиттер</RouterLink>
+          </li>
         </ul>
       </div>
     </div>
