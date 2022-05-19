@@ -20,13 +20,19 @@ export default {
   components: { ColorStop },
   data: () => ({
     colors: [
-      { id: 0, hex: "#ff000", disabled: false },
+      { id: 0, hex: "#ff0000", disabled: false },
       { id: 1, hex: "#00ff00", disabled: false },
     ],
   }),
   computed: {
     gradient() {
-      return "linear-gradient(45deg, red, green)";
+      let linearGradient = "linear-gradient(45deg";
+      this.colors.forEach((color) => {
+        linearGradient += `, ${color.hex}`;
+      });
+      linearGradient += ")";
+      console.log(linearGradient);
+      return linearGradient;
     },
   },
 };
