@@ -50,6 +50,12 @@ const router = createRouter({
       path: '/twitter/:id',
       name: 'view-tweet',
       component: () => import('../views/twitter/ViewTweet.vue'),
+    },
+
+    {
+      path: '/gradient',
+      name: 'gradient-view',
+      component: () => import('../views/GradientView.vue'),
     }
   ]
 })
