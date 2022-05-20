@@ -35,6 +35,10 @@ import { RouterLink } from "vue-router";
           <li class="nav-item">
             <RouterLink class="nav-link" to="/gradient">Градиент</RouterLink>
           </li>
+
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/directives">Директивы</RouterLink>
+          </li>
         </ul>
       </div>
     </div>

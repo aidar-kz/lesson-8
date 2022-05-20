@@ -56,6 +56,12 @@ const router = createRouter({
       path: '/gradient',
       name: 'gradient-view',
       component: () => import('../views/GradientView.vue'),
+    },
+
+    {
+      path: '/directives',
+      name: 'directives-view',
+      component: () => import('../views/DirectivesView.vue'),
     }
   ]
 })
