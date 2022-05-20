@@ -1,6 +1,13 @@
 <template>
   <div class="container p-5">
     <section>
+      <h4>v-list</h4>
+      <div v-list.random="browsers" class="w-100 bg-success p-4 mt-4 shadow">
+        <h3 class="text-white">Ниже должен выводиться список.</h3>
+      </div>
+    </section>
+
+    <section>
       <h4>v-tag-class</h4>
       <div
         v-tag-class:h1="'text-warning'"
@@ -38,10 +45,13 @@
 </template>
 
 <script>
+import browsers from "@/assets/browsers";
+
 export default {
   data() {
     return {
       text: "",
+      browsers,
     };
   },
 };
