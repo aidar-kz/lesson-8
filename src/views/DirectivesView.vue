@@ -1,6 +1,14 @@
 <template>
   <div class="container p-5">
     <section>
+      <h4>v-weekend</h4>
+      <div v-weekend class="w-100 bg-warning p-4 mt-4 text-white shadow">
+        <h2>Этот div виден только в раб. дни</h2>
+      </div>
+    </section>
+
+    <section>
+      <h4>v-lorem</h4>
       <div class="w-100 bg-info p-4 mt-4 text-white shadow">
         <h2 v-lorem:ru="4"></h2>
         <p v-lorem:ru></p>
@@ -19,4 +27,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+section {
+  margin-bottom: 100px;
+}
+</style>
