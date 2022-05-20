@@ -1,6 +1,17 @@
 <template>
   <div class="container p-5">
     <section>
+      <h4>v-tag-class</h4>
+      <div
+        v-tag-class:h1="'text-warning'"
+        class="w-100 bg-danger p-4 mt-4 shadow"
+      >
+        <div id="first">Ко мне должен добавиться тег с классом.</div>
+        <div>Ко мне должен добавиться тег с классом.</div>
+      </div>
+    </section>
+
+    <section>
       <h4>v-random-bg</h4>
       <textarea
         v-random-bg
