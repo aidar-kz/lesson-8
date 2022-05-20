@@ -1,6 +1,15 @@
 <template>
   <div class="container p-5">
     <section>
+      <h4>v-random-bg</h4>
+      <textarea
+        v-random-bg
+        class="w-100 p-4 mt-4 text-white shadow"
+        v-model="text"
+      />
+    </section>
+
+    <section>
       <h4>v-weekend</h4>
       <div v-weekend class="w-100 bg-warning p-4 mt-4 text-white shadow">
         <h2>Этот div виден только в раб. дни</h2>
@@ -21,7 +30,7 @@
 export default {
   data() {
     return {
-      someVar: "",
+      text: "",
     };
   },
 };
