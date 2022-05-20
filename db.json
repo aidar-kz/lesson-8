@@ -2,13 +2,13 @@
   "tweets": [
     {
       "text": "123",
-      "likes": 8,
+      "likes": 17,
       "timestamp": 1652970101620,
       "id": 1
     },
     {
       "text": "test teststest ",
-      "likes": 0,
+      "likes": 17,
       "timestamp": 1652970198986,
       "id": 2
     }

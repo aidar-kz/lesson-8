@@ -1,5 +1,5 @@
 <template>
-  <div class="col col-md-6 mx-auto">
+  <div class="container p-5">
     <AddTodo @add-todo="addTodo" />
 
     <ul class="list-group">

@@ -49,7 +49,7 @@ export default {
 </script>
 
 <template>
-  <div class="col col-md-4 mx-auto">
+  <div class="container p-5">
     <form @submit.prevent="onSubmit" v-if="isFormVisible">
       <div class="mb-3">
         <label for="firstname" class="form-label">Имя</label>
