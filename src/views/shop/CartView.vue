@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-5">
+  <div class="container py-5 px-md-5">
     <ul class="list-group">
       <li
         v-for="item in shopStore.cart"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="d-flex justify-content-between">
       <router-link to="/shop" class="btn">Магазин</router-link>
       <router-link to="/shop/cart" class="btn">

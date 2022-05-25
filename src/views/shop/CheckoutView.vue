@@ -1,42 +1,44 @@
 <template>
-  <div class="container p-5">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Наименование</th>
-          <th>Цена</th>
-          <th>Кол-во</th>
-          <th>Сумма</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in shopStore.cart" :key="item.id">
-          <td>{{ item.brand }} {{ item.model }}</td>
-          <td v-price="item.price" />
-          <td>{{ item.quantity }}</td>
-          <td class="text-end" v-price="item.price * item.quantity"></td>
-        </tr>
-        <tr>
-          <td colspan="3" class="text-end">Сумма к оплате:</td>
-          <td class="text-end" v-price="shopStore.cartTotal" />
-        </tr>
-      </tbody>
-    </table>
+  <div class="container py-5 px-md-5">
+    <div class="col col-lg-8 mx-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Наименование</th>
+            <th>Цена</th>
+            <th>Кол-во</th>
+            <th>Сумма</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in shopStore.cart" :key="item.id">
+            <td>{{ item.brand }} {{ item.model }}</td>
+            <td v-price="item.price" />
+            <td>{{ item.quantity }}</td>
+            <td class="text-end" v-price="item.price * item.quantity"></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-end">Сумма к оплате:</td>
+            <td class="text-end" v-price="shopStore.cartTotal" />
+          </tr>
+        </tbody>
+      </table>
 
-    <div class="d-flex justify-content-between mt-3">
-      <router-link to="/shop/cart" class="btn">
-        <i class="bi bi-arrow-left-short"></i>
-        <span>Назад</span>
-      </router-link>
+      <div class="d-flex justify-content-between mt-3">
+        <router-link to="/shop/cart" class="btn">
+          <i class="bi bi-arrow-left-short"></i>
+          <span>Назад</span>
+        </router-link>
 
-      <button class="btn btn-success" @click="checkout">
-        <div
-          v-if="isLoading"
-          class="spinner-border spinner-border-sm"
-          role="status"
-        ></div>
-        <span v-else>Оплатить</span>
-      </button>
+        <button v-if="isLoading" class="btn btn-primary" disabled>
+          <span class="spinner-border spinner-border-sm"></span>
+          <span class="ms-1">Загрузка...</span>
+        </button>
+
+        <button v-else class="btn btn-success" @click="checkout">
+          Оплатить
+        </button>
+      </div>
     </div>
   </div>
 </template>
