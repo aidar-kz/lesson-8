@@ -52,24 +52,26 @@ export default {
     async checkout() {
       this.isLoading = true;
 
-      const res = await fetch(
-        "https://jse-211.herokuapp.com/api/stripe/create-checkout-session",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            cart: this.shopStore.cart,
-            successUrl: "http://localhost:3000/shop/success",
-            cancelUrl: "http://localhost:3000/shop/checkout",
-          }),
-        }
-      );
+      const baseUrl = "https://jse-211.herokuapp.com";
+      // const baseUrl = "http://localhost:1700";
+      const res = await fetch(baseUrl + "/api/shop/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cart: this.shopStore.cart,
+          successUrl: "http://localhost:3000/shop/success",
+          cancelUrl: "http://localhost:3000/shop/checkout",
+        }),
+      });
 
-      const { url } = await res.json();
-
-      window.location.href = url;
+      if (res.status === 200) {
+        const { url } = await res.json();
+        window.location.href = url;
+      } else {
+        alert("Что-то пошло не так");
+      }
     },
   },
 };

@@ -22,6 +22,7 @@
             min="1"
             class="form-control ms-2"
             v-model.number="item.quantity"
+            @change="shopStore.saveCart()"
           />
         </div>
       </li>
