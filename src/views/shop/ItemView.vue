@@ -14,7 +14,10 @@
           <li>емкость аккумулятора: {{ item.battery }} мАч</li>
         </ul>
         <div class="ms-3">
-          <h5>Цена: {{ item.price }}</h5>
+          <h5>
+            Цена:
+            <span v-price v-html="item.price"></span>
+          </h5>
           <button
             class="btn btn-success"
             @click="shopStore.addToCart(this.item)"

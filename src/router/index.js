@@ -89,6 +89,11 @@ const router = createRouter({
           name: "checkout-view",
           component: () => import("../views/shop/CheckoutView.vue"),
         },
+        {
+          path: "success",
+          name: "success-view",
+          component: () => import("../views/shop/SuccessView.vue"),
+        },
       ],
     },
   ],

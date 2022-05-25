@@ -5,7 +5,7 @@ import { RouterLink } from "vue-router";
 <template>
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
     <div class="container-fluid">
-      <RouterLink to="/" class="navbar-brand">Lesson 3</RouterLink>
+      <RouterLink to="/" class="navbar-brand">Lesson 7</RouterLink>
       <button
         class="navbar-toggler"
         data-bs-toggle="collapse"

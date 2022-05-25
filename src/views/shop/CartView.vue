@@ -16,7 +16,7 @@
           {{ item.brand }} {{ item.model }}
         </div>
         <div class="d-flex align-items-center">
-          <span>{{ item.quantity * item.price }}</span>
+          <span v-price v-html="item.quantity * item.price"></span>
           <input
             type="number"
             min="1"
@@ -26,7 +26,10 @@
         </div>
       </li>
 
-      <li class="list-group-item text-end">Итого: {{ shopStore.cartTotal }}</li>
+      <li class="list-group-item text-end">
+        Итого:
+        <span v-price v-html="shopStore.cartTotal"></span>
+      </li>
     </ul>
 
     <div class="d-flex justify-content-between mt-3">

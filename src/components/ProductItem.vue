@@ -9,7 +9,7 @@
         <h6 class="card-title">{{ item.brand }} {{ item.model }}</h6>
       </router-link>
 
-      <p class="card-text">{{ item.price }}</p>
+      <p class="card-text" v-price v-html="item.price"></p>
 
       <button
         class="btn btn-success mt-auto align-self-end"
