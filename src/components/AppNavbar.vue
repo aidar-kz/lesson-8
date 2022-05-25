@@ -39,6 +39,10 @@ import { RouterLink } from "vue-router";
           <li class="nav-item">
             <RouterLink class="nav-link" to="/directives">Директивы</RouterLink>
           </li>
+
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/shop">Магазин</RouterLink>
+          </li>
         </ul>
       </div>
     </div>
