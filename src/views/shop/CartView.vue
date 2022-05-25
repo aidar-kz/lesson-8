@@ -32,7 +32,7 @@
       </li>
     </ul>
 
-    <div class="d-flex justify-content-between mt-3">
+    <div class="d-flex justify-content-between mt-3" v-if="shopStore.cartTotal">
       <button class="btn btn-warning" @click="shopStore.clearCart">
         Очистить корзину
       </button>
