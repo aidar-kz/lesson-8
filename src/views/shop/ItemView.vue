@@ -2,7 +2,7 @@
   <div class="container p-5">
     <h1>{{ item.brand }} {{ item.model }} {{ item.storage }} ГБ</h1>
     <div class="d-flex mt-4">
-      <img :src="item.image" width="200" />
+      <img :src="item.image" />
       <div class="ms-3">
         <ul>
           <li>размер оперативной памяти: {{ item.ram }} ГБ</li>
@@ -16,7 +16,7 @@
         <div class="ms-3">
           <h5>
             Цена:
-            <span v-price v-html="item.price"></span>
+            <span v-price="item.price" />
           </h5>
           <button
             class="btn btn-success"
@@ -46,4 +46,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+img {
+  max-height: 300px;
+}
+</style>

@@ -1,15 +1,18 @@
-function formatPrice(price) {
-  price = price.replace("₸", "");
-  return price.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ") + " &#8376;";
-}
+const formatter = new Intl.NumberFormat("kz-KZ", {
+  style: "currency",
+  maximumFractionDigits: 0,
+  currency: "KZT",
+  currencyDisplay: "narrowSymbol",
+});
 
 export default {
   mounted(el, binding) {
-    const price = el.textContent;
-    el.innerHTML = formatPrice(price);
+    const price = binding.value;
+    el.textContent = formatter.format(price);
   },
+
   updated(el, binding) {
-    const price = el.textContent;
-    el.innerHTML = formatPrice(price);
+    const price = binding.value;
+    el.textContent = formatter.format(price);
   },
 };

@@ -12,13 +12,13 @@
       <tbody>
         <tr v-for="item in shopStore.cart" :key="item.id">
           <td>{{ item.brand }} {{ item.model }}</td>
-          <td v-price v-html="item.price"></td>
+          <td v-price="item.price" />
           <td>{{ item.quantity }}</td>
-          <td class="text-end" v-price v-html="item.price * item.quantity"></td>
+          <td class="text-end" v-price="item.price * item.quantity"></td>
         </tr>
         <tr>
           <td colspan="3" class="text-end">Сумма к оплате:</td>
-          <td class="text-end" v-price v-html="shopStore.cartTotal"></td>
+          <td class="text-end" v-price="shopStore.cartTotal" />
         </tr>
       </tbody>
     </table>
