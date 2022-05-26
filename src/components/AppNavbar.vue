@@ -1,7 +1,3 @@
-<script>
-import { RouterLink } from "vue-router";
-</script>
-
 <template>
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
     <div class="container-fluid">
@@ -16,35 +12,52 @@ import { RouterLink } from "vue-router";
 
       <div class="collapse navbar-collapse" id="content">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/">Главная</RouterLink>
-          </li>
-
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/register">Регистрация</RouterLink>
-          </li>
-
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/todo">Список дел</RouterLink>
-          </li>
-
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/twitter">Твиттер</RouterLink>
-          </li>
-
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/gradient">Градиент</RouterLink>
-          </li>
-
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/directives">Директивы</RouterLink>
-          </li>
-
-          <li class="nav-item">
-            <RouterLink class="nav-link" to="/shop">Магазин</RouterLink>
+          <li class="nav-item" v-for="(link, i) in links" :key="i">
+            <RouterLink class="nav-link" :to="link.path">{{
+              link.name
+            }}</RouterLink>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          name: "Главная",
+          path: "/",
+        },
+        {
+          name: "Регистрация",
+          path: "/register",
+        },
+        {
+          name: "Список дел",
+          path: "/todo",
+        },
+        {
+          name: "Твиттер",
+          path: "/twitter",
+        },
+        {
+          name: "Градиент",
+          path: "/gradient",
+        },
+        {
+          name: "Директивы",
+          path: "/directives",
+        },
+        {
+          name: "Магазин",
+          path: "/shop",
+        },
+      ],
+    };
+  },
+};
+</script>
