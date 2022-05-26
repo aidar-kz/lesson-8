@@ -71,6 +71,12 @@ const router = createRouter({
     },
 
     {
+      path: "/plugins",
+      name: "plugins-view",
+      component: () => import("../views/PluginsView.vue"),
+    },
+
+    {
       path: "/shop",
       name: "shop-layout",
       component: () => import("../views/shop/ShopLayout.vue"),

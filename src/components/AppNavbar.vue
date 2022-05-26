@@ -60,6 +60,10 @@ export default {
           name: "Слоты",
           path: "/slots",
         },
+        {
+          name: "Плагины",
+          path: "/plugins",
+        },
       ],
     };
   },
