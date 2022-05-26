@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container p-5">
     <div class="row">
       <div class="d-flex justify-content-between">
         <div>

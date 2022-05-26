@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container p-5">
     <form @submit.prevent="addPost">
       <div class="mb-3">
         <label for="title" class="form-label">Заголовок</label>

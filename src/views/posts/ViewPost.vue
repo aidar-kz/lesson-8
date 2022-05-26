@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container p-5">
     <div class="row">
       <div class="col-2">
         <RouterLink to="/" class="rounded-pill p-2 d-flex text-decoration-none">
