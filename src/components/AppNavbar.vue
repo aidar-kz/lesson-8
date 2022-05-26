@@ -56,6 +56,10 @@ export default {
           name: "Магазин",
           path: "/shop",
         },
+        {
+          name: "Слоты",
+          path: "/slots",
+        },
       ],
     };
   },
